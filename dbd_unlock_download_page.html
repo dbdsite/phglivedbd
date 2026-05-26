@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DBD UNLOCK - RU | Скачать</title>
+  <style>
+    :root {
+      --bg: #050505;
+      --panel: rgba(10, 10, 10, 0.82);
+      --panel2: rgba(18, 18, 18, 0.92);
+      --red: #b80000;
+      --red-hover: #e10000;
+      --red-dark: #680000;
+      --text: #f4f4f4;
+      --muted: #a7a7a7;
+      --dim: #777;
+      --border: #3d2525;
+      --yellow: #ffd84d;
+      --green: #4dff88;
+      --blue: #4da6ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 50% 18%, rgba(160, 0, 0, 0.28), transparent 34%),
+        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.88)),
+        url("images/fone.png") center/cover fixed,
+        var(--bg);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size: 42px 42px;
+      opacity: .24;
+      z-index: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(1120px, calc(100% - 34px));
+      margin: 0 auto;
+      padding: 38px 0 26px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 54px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--muted);
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+
+    .brand img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 12px rgba(255, 0, 0, .35));
+    }
+
+    .badge {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,.48);
+      color: var(--yellow);
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 42px;
+      margin-bottom: 42px;
+    }
+
+    .hero-logo {
+      width: min(520px, 100%);
+      display: block;
+      margin: 0 auto 18px;
+      filter: drop-shadow(0 0 22px rgba(255, 0, 0, .22));
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 84px);
+      line-height: .92;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      text-shadow: 0 0 22px rgba(255,0,0,.2);
+    }
+
+    .red { color: #ff1616; }
+
+    .lead {
+      margin: 22px 0 26px;
+      color: #ddd;
+      font-size: 18px;
+      line-height: 1.55;
+      max-width: 620px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 230px;
+      min-height: 62px;
+      padding: 16px 28px;
+      color: white;
+      text-decoration: none;
+      background: var(--red);
+      border: 1px solid #d62828;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(184, 0, 0, .28);
+      transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+    }
+
+    .btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 34%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 0 32%, rgba(90,0,0,.7) 33% 100%);
+      opacity: .9;
+    }
+
+    .btn span { position: relative; z-index: 1; }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: var(--red-hover);
+      box-shadow: 0 18px 48px rgba(225, 0, 0, .42);
+    }
+
+    .btn.secondary {
+      background: rgba(10,10,10,.8);
+      border-color: var(--border);
+      color: var(--text);
+      box-shadow: none;
+    }
+
+    .btn.secondary::after { opacity: .25; }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 26px;
+      box-shadow: 0 24px 70px rgba(0,0,0,.38);
+      backdrop-filter: blur(6px);
+    }
+
+    .status-title {
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .1em;
+      margin-bottom: 18px;
+    }
+
+    .status-row {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      align-items: center;
+      color: var(--muted);
+      margin: 13px 0;
+      font-size: 16px;
+    }
+
+    .status-row b { color: var(--text); }
+    .green { color: var(--green); }
+    .blue { color: var(--blue); }
+    .yellow { color: var(--yellow); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin: 28px 0 42px;
+    }
+
+    .card {
+      background: var(--panel2);
+      border: 1px solid var(--border);
+      padding: 22px;
+      min-height: 170px;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      color: #ff1616;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 19px;
+    }
+
+    .download-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 22px;
+      align-items: center;
+      margin: 24px 0 44px;
+    }
+
+    .download-box h2 {
+      margin: 0 0 8px;
+      font-size: 28px;
+      text-transform: uppercase;
+    }
+
+    .download-box p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--dim);
+      padding: 18px 0 4px;
+      font-size: 13px;
+    }
+
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--muted);
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .footer-brand img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+    }
+
+    a { color: var(--blue); }
+
+    @media (max-width: 860px) {
+      .hero, .download-box { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      header { align-items: flex-start; flex-direction: column; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="brand">
+        <img src="images/logo4.png" alt="PHG LIVE" onerror="this.style.display='none'" />
+        <span>PHG-LIVE</span>
+      </div>
+      <div class="badge">DBD UNLOCK - RU</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>DBD <span class="red">UNLOCK</span></h1>
+        <p class="lead">
+          Гибридная программа на основе модернизированного Zapret и дополнительных функций для выбора региона.
+          Создана для Dead by Daylight и популярных игровых/социальных сервисов.
+        </p>
+        <div class="actions">
+          <a class="btn" href="downloads/DBD-UNLOCK-RU.exe" download><span>Скачать программу</span></a>
+          <a class="btn secondary" href="#faq"><span>Подробнее</span></a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <img class="hero-logo" src="images/logo.png" alt="DBD UNLOCK" onerror="this.style.display='none'" />
+        <div class="status-title">СТАТУС</div>
+        <div class="status-row"><span class="green">●</span><b>Версия:</b> актуальная сборка</div>
+        <div class="status-row"><span class="blue">▰</span><b>Поддержка:</b> Windows</div>
+        <div class="status-row"><span class="yellow">🔗</span><b>Методы:</b> встроенные BAT/UTILS</div>
+        <div class="status-row"><span class="green">◷</span><b>Обновления:</b> через PHG</div>
+      </div>
+    </section>
+
+    <section class="grid" id="faq">
+      <article class="card">
+        <h3>Что это?</h3>
+        <p>DBD-UNLOCK — оболочка для выбора и запуска методов подключения с удобным интерфейсом.</p>
+      </article>
+      <article class="card">
+        <h3>Сервисы</h3>
+        <ul>
+          <li>Dead by Daylight</li>
+          <li>Discord, Telegram</li>
+          <li>YouTube, TikTok, Instagram, Twitter/X</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>PRO функции</h3>
+        <p>Автозапуск, выбор региона и дополнительные параметры доступны после активации ключа.</p>
+      </article>
+    </section>
+
+    <section class="panel download-box">
+      <div>
+        <h2>Скачать DBD UNLOCK - RU</h2>
+        <p>
+          Нажми кнопку скачивания. Для корректной работы запускай программу от имени администратора.
+          Если браузер предупреждает о неизвестном издателе — это нормально для новой сборки без цифровой подписи.
+        </p>
+      </div>
+      <a class="btn" href="downloads/DBD-UNLOCK-RU.exe" download><span>Download EXE</span></a>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3>Купить ключ</h3>
+        <p>TG ЛС: <a href="https://t.me/mcpleh" target="_blank" rel="noopener">https://t.me/mcpleh</a></p>
+      </article>
+      <article class="card">
+        <h3>Сообщество</h3>
+        <p>Discord: <a href="https://discord.gg/YCUTMsNxff" target="_blank" rel="noopener">discord.gg/YCUTMsNxff</a></p>
+      </article>
+      <article class="card">
+        <h3>Telegram</h3>
+        <p>Канал: <a href="https://t.me/playhangames666" target="_blank" rel="noopener">t.me/playhangames666</a></p>
+      </article>
+    </section>
+
+    <footer>
+      <div class="footer-brand">
+        <img src="images/logo4.png" alt="" onerror="this.style.display='none'" />
+        <span>PHG-LIVE</span>
+      </div>
+      <div>Developed by a third-party team, not affiliated with BHVR</div>
+    </footer>
+  </main>
+</body>
+</html>
